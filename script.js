@@ -66,3 +66,16 @@ lista.ativo();
 const lastLi = new Dom();
 lastLi.seletor = 'li:last-child';
 lastLi.ativo();
+
+function Dom(seletor) {
+  const element = document.querySelector(seletor);
+  this.ativo = function(classe) {
+    element.classList.add(classe);
+  };
+}
+
+const lista = new Dom('ul');
+lista.ativo('ativo');
+
+const lastLi = new Dom('li:last-child');
+lastLi.ativo('ativo');
